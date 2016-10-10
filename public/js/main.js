@@ -1,24 +1,12 @@
-// var $taskDescription = $('#task-description')
-//
-// var $createTaskButton = $('#create-task')
-//
-// function createArmorPiece(){
-//   var description = $taskDescription.val();
-//
-//   return $.ajax({
-//     method: 'GET',
-//     url: '/api/get/',
-//     data: {
-//     description: description}
-//   });
-// }
-//
-// $createTaskButton.click(createArmorPiece)
+// setting variables for armor button submission
+var $armorSlot = $('#armorSlotInput')
+var $armorPiece = $('#armorPieceName')
+var $armorDescript = $('#armorDescript')
 
-
-
+// setting variables for character
 var $characterName = $('#character-name');
 
+// GET character from full character list
 function getCharName() {
   $.ajax({
     method: 'GET',
@@ -32,43 +20,15 @@ function getCharName() {
     console.log('help me, computer!', text, status, xhr.status);
   })
 }
+
 getCharName();
 
-// $('#armorSlotInput').keypress(function(event) {
-//     var inputStringOne = $('#armorSlotInput').val();
-//     if (event.which == 13) {
-//         newArmorPiece(inputStringOne);
-//         return false;
-//     }
-// });
-//
-// $('#armorPieceName').keypress(function(event) {
-//     var inputStringTwo = $('#armorPieceName').val();
-//     if (event.which == 13) {
-//         newArmorPiece(inputStringTwo);
-//         return false;
-//     }
-// });
-//
-// function newArmorPiece(inputStringOne, inputStringTwo) {
-//   var armorAdd = $("#addArmorBtn").val("");
-//   $.ajax({
-//     method: 'POST',
-//     url: '/api/add_armor_piece',
-//     data: {
-//       armor_slot: inputStringOne,
-//       armor_name: inputStringTwo,
-//     },
-//     datatype: 'json',
-//   })
-// };
 
-var $armorSlot = $('#armorSlotInput')
-var $armorPiece = $('#armorPieceName')
-
+// POST new armor piece via form
 $("#addArmorBtn").on('click', function newArmorPiece() {
   var slot = $armorSlot.val();
   var piece = $armorPiece.val();
+  var descript = $armorDescript.val();
 
   $('#armorSlotInput').val('');
 
@@ -78,24 +38,13 @@ $("#addArmorBtn").on('click', function newArmorPiece() {
     datatype: 'json',
     data: {
       armor_slot: slot,
-      armor_name: piece
+      armor_name: piece,
+      description: descript
     }
   })
 })
 
-//
-//   }).done(function(armor) {
-//     new ArmorDetails(armor);
-//
-//   }).fail(function(xhr, text, status) {
-//     if (xhr.status == 404)
-//     console.log('help me, computer!', text, status, xhr.status);
-//   })
-//   console.log(armorAdd)
-// }
-
-
-
+// Constructor for character information
 function CharacterDetails(characterObject) {
   console.log(characterObject);
     this.info = {
@@ -106,9 +55,8 @@ function CharacterDetails(characterObject) {
 
     var charContainer = $("<div>").attr("class", this.info.charName);
     var charName = $("<p>").attr("id", this.info.charName).html(this.info.charName).appendTo(charContainer);
-    $(charContainer).insertAfter("header");
 
-    // $("#" + this.info.charname)
+    $(charContainer).insertAfter("header");
 
     this.MagicElements = function(characterObject) {
         var context = {

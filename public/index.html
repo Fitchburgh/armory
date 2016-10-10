@@ -7,13 +7,18 @@
     <title>Armory</title>
   </head>
   <body>
+    
     <div class="top">
       <header>
-        <h1 class="title">Armory</h1>
+        <h1 class="title">Armory For:</h1>
       </header>
+      <!-- Name of character will be here via magic element -->
     </div>
+
     <div></div>
-    <div id="add-armor-piece">
+
+    <div class="col" id="add-armor-piece">
+      <h4 id="armor-input-title">Add a piece to your armory:</h4>
       <form class="form-inline">
         <div class="form-group">
           <label class="sr-only" for="armorSlotInput">Armor Slot</label>
@@ -22,6 +27,10 @@
         <div class="form-group">
           <label class="sr-only" for="armorPieceName">Piece Name</label>
           <input type="name" class="form-control" id="armorPieceName" placeholder="Piece Name">
+        </div>
+        <div class="form-group">
+          <label for="armorDescript"></label>
+          <textarea class="form-control" id="armorDescript" rows="3" placeholder="Description (optional)"></textarea>
         </div>
         <button type="submit" class="btn btn-primary" id="addArmorBtn">Submit</button>
       </form>

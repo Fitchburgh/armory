@@ -37,3 +37,7 @@ end
 get '/' do
   p 'Hello, World!'
 end
+
+get '/api/character_list' do
+  Character.all.to_json
+end

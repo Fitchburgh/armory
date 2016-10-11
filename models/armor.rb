@@ -8,7 +8,7 @@ class Armor < ActiveRecord::Base
   before_save :adjust_fields
 
   def adjust_fields
-    armor_name.capitalize!.strip!
-    armor_slot.downcase!.strip!
+    armor_name.capitalize!
+    armor_slot.downcase!
   end
 end

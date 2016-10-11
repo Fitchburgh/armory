@@ -8,7 +8,6 @@
     <title>Armory</title>
   </head>
   <body>
-
     <div class="top">
       <header>
         <h1 class="title">Armory For:</h1>
@@ -35,52 +34,64 @@
         <button type="submit" class="btn btn-primary" id="addArmorBtn">Submit</button>
       </form>
     </div>
-    <div class="col-md-9">
-      <div class="panel panel-default" id="loadout">
-        <!-- Default panel contents -->
-        <div class="panel-heading" id="loadout-title">Character Loadout</div>
-        <div class="panel-body">
-          <p>You must be quite the fighter with this loadout...</p>
+      <div class="col-md-9">
+        <div class="panel panel-default" id="loadout">
+          <!-- Default panel contents -->
+          <div class="panel-heading" id="loadout-title">Character Loadout</div>
+          <div class="panel-body">
+            <p>You must be quite the fighter with this loadout...</p>
+          </div>
+          <!-- List group -->
+          <div class="armorPicker">
+            <label class="test-two" for="helmSelect" id="helmPic">Helms!
+              <select class="selectpicker" id="helmSelect">
+                <option>Select</option>
+                <!-- list of items is gonna go here. -->
+              </select>
+            </label>
+          </div>
+          <div class="armorPicker">
+            <label for="chestSelect" id="chestPic">Chests!
+              <select class="selectpicker" id="chestSelect">
+                <option>Select</option>
+                <!-- list of items is gonna go here. -->
+              </select>
+            </label>
+          </div>
+          <div class="armorPicker">
+            <label for="glovesSelect" id="glovePic">Gloves!
+              <select class="selectpicker" id="glovesSelect">
+                <option>Select</option>
+                <!-- list of items is gonna go here. -->
+              </select>
+            </label>
+          </div>
+          <div class="armorPicker">
+            <label for="legsSelect" id="legPic">Legs!
+              <select class="selectpicker" id="legsSelect">
+                <option>Select</option>
+                <!-- list of items is gonna go here. -->
+              </select>
+            </label>
+          </div>
+          <div class="armorPicker">
+            <label for="feetSelect" id="feetPic">Feet!
+              <select class="selectpicker" id="feetSelect">
+                <option>Select</option>
+                <!-- list of items is gonna go here. -->
+              </select>
+            </label>
+          </div>
+          <div class="armorPicker">
+            <label for="weaponSelect" id="weaponPic">Weapons!
+              <select class="selectpicker" id="weaponSelect">
+                <option>Select</option>
+                <!-- list of items is gonna go here. -->
+              </select>
+            </label>
+          </div>
         </div>
-        <!-- List group -->
-        <label for="helmSelect" id="helmPic">Helms!
-          <select class="selectpicker" id="helmSelect">
-            <option>Select</option>
-            <!-- list of items is gonna go here. -->
-          </select>
-        </label>
-        <label for="chestSelect" id="chestPic">Chests!
-          <select class="selectpicker" id="chestSelect">
-            <option>Select</option>
-            <!-- list of items is gonna go here. -->
-          </select>
-        </label>
-        <label for="glovesSelect" id="glovePic">Gloves!
-          <select class="selectpicker" id="glovesSelect">
-            <option>Select</option>
-            <!-- list of items is gonna go here. -->
-          </select>
-        </label>
-        <label for="legsSelect" id="legPic">Legs!
-          <select class="selectpicker" id="legsSelect">
-            <option>Select</option>
-            <!-- list of items is gonna go here. -->
-          </select>
-        </label>
-        <label for="feetSelect" id="feetPic">Feet!
-          <select class="selectpicker" id="feetSelect">
-            <option>Select</option>
-            <!-- list of items is gonna go here. -->
-          </select>
-        </label>
-        <label for="weaponSelect" id="weaponPic">Weapons!
-          <select class="selectpicker" id="weaponSelect">
-            <option>Select</option>
-            <!-- list of items is gonna go here. -->
-          </select>
-        </label>
       </div>
-    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="js/jquery.js"></script>
     <script src="js/main.js"></script>

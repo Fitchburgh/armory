@@ -3,26 +3,19 @@ var $addArmorSlot = $('#armorSlotInput')
 var $addArmorPiece = $('#armorPieceName')
 var $addArmorDescript = $('#armorDescript')
 
-var $helmDropdown = $('#helmDropdown')
+// set variables for armor slot
+var $helmSelect = $('#helmSelect')
+var $chestSelect = $('#chestSelect')
+var $glovesSelect = $('#glovesSelect')
+var $legsSelect = $('#legsSelect')
+var $feetSelect = $('#feetSelect')
+
+// set variable for weapons
+var $weaponSelect = $('#weaponSelect')
 
 var $armorList = $('#ajsdpf')
 // setting variables for character
 var $characterName = $('#character-name');
-
-// GET armor list
-// function getArmorList() {
-//   $.ajax({
-//     method: 'GET',
-//     url: '/api/loadout',
-//     data: {},
-//     "datatype": "json",
-//   }).done.function(armorList) {
-//     // console.log(armorList)
-//     armorList.forEach(function(armorList) {
-//     armorList.append("'<li id='" + armorList.armor_slot + "'>" + armorList.armor_name + "</li>")
-//   })
-// }}
-// getArmorList();
 
 // GET character from full character list
 function getCharName() {
@@ -32,7 +25,7 @@ function getCharName() {
     data: {},
     datatype: 'json',
   }).done(function(character) {
-    new CharacterDetails(character[1]); // event listener
+    new CharacterDetails(character[0]); // event listener
   }).fail(function(xhr, text, status) {
     if (xhr.status == 404)
     console.log('help me, computer!', text, status, xhr.status);
@@ -48,13 +41,89 @@ function getHelmList() {
     data: {},
     datatype: 'json',
   }).done(function(armorList){
-    console.log(armorList);
     armorList.forEach(function(armor){
-      $("<option id='" + armor.armor_slot + "'>" + armor.armor_name + "</option>").appendTo($helmDropdown);
+      $("<option id='" + armor.armor_slot + "'>" + armor.armor_name + "</option>").appendTo($helmSelect);
     })
   })
 }
 getHelmList();
+
+// GET list of chest available to equip
+function getChestList() {
+  $.ajax({
+    method: 'GET',
+    url: '/api/chests',
+    data: {},
+    datatype: 'json',
+  }).done(function(armorList){
+    armorList.forEach(function(armor){
+      $("<option id='" + armor.armor_slot + "'>" + armor.armor_name + "</option>").appendTo($chestSelect);
+    })
+  })
+}
+getChestList();
+
+// GET list of gloves available to equip
+function getGlovesList() {
+  $.ajax({
+    method: 'GET',
+    url: '/api/gloves',
+    data: {},
+    datatype: 'json',
+  }).done(function(armorList){
+    armorList.forEach(function(armor){
+      $("<option id='" + armor.armor_slot + "'>" + armor.armor_name + "</option>").appendTo($glovesSelect);
+    })
+  })
+}
+getGlovesList();
+
+// GET list of legs available to equip
+function getLegsList() {
+  $.ajax({
+    method: 'GET',
+    url: '/api/legs',
+    data: {},
+    datatype: 'json',
+  }).done(function(armorList){
+    armorList.forEach(function(armor){
+      $("<option id='" + armor.armor_slot + "'>" + armor.armor_name + "</option>").appendTo($legsSelect);
+    })
+  })
+}
+getLegsList();
+
+// GET list of feet available to equip
+function getFeetList() {
+  $.ajax({
+    method: 'GET',
+    url: '/api/feet',
+    data: {},
+    datatype: 'json',
+  }).done(function(armorList){
+    armorList.forEach(function(armor){
+      $("<option id='" + armor.armor_slot + "'>" + armor.armor_name + "</option>").appendTo($feetSelect);
+    })
+  })
+}
+getFeetList();
+
+// GET list of weapons available to equip
+function getWeaponList() {
+  $.ajax({
+    method: 'GET',
+    url: '/api/weapons',
+    data: {},
+    datatype: 'json',
+  }).done(function(weaponList){
+    console.log(weaponList);
+    weaponList.forEach(function(weapon){
+      // $("<option id='" + weapon.weapon_type + "'>" + weapon.weapon_name + "</option>").appendTo($weaponSelect);
+      $("<option>").attr('id', weapon.weapon_name).text(weapon.weapon_name + ' ' + weapon.weapon_type).appendTo($weaponSelect);
+    })
+  })
+}
+getWeaponList();
 
 // setInterval(function(){
 // $.tasks.empty //empty out your tasks
@@ -90,7 +159,7 @@ function CharacterDetails(characterObject) {
     };
 
     var charContainer = $("<div>").attr("class", this.info.charName);
-    var charName = $("<p>").attr("id", this.info.charName).html(this.info.charName).appendTo(charContainer);
+    var charName = $("<p>").addClass('character').attr("id", this.info.charName).html(this.info.charName).appendTo(charContainer);
 
     $(charContainer).insertAfter("header");
 

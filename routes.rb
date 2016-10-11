@@ -43,6 +43,10 @@ get '/api/character_list' do
   Character.all.to_json
 end
 
+get '/api/loadout' do
+  JSON.dump '{usdhafio}'
+end
+
 # want to call the whole armor list for a specific character
 # get '/api/armor_list' do
 #   Armor.where()

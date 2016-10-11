@@ -1,10 +1,28 @@
 // setting variables for armor button submission
-var $armorSlot = $('#armorSlotInput')
-var $armorPiece = $('#armorPieceName')
-var $armorDescript = $('#armorDescript')
+var $addArmorSlot = $('#armorSlotInput')
+var $addArmorPiece = $('#armorPieceName')
+var $addArmorDescript = $('#armorDescript')
 
+var $helmDropdown = $('#helmDropdown')
+
+var $armorList = $('#ajsdpf')
 // setting variables for character
 var $characterName = $('#character-name');
+
+// GET armor list
+// function getArmorList() {
+//   $.ajax({
+//     method: 'GET',
+//     url: '/api/loadout',
+//     data: {},
+//     "datatype": "json",
+//   }).done.function(armorList) {
+//     // console.log(armorList)
+//     armorList.forEach(function(armorList) {
+//     armorList.append("'<li id='" + armorList.armor_slot + "'>" + armorList.armor_name + "</li>")
+//   })
+// }}
+// getArmorList();
 
 // GET character from full character list
 function getCharName() {
@@ -12,7 +30,7 @@ function getCharName() {
     method: 'GET',
     url: '/api/character_list',
     data: {},
-    "datatype": "json",
+    datatype: 'json',
   }).done(function(character) {
     new CharacterDetails(character[1]); // event listener
   }).fail(function(xhr, text, status) {
@@ -20,15 +38,31 @@ function getCharName() {
     console.log('help me, computer!', text, status, xhr.status);
   })
 }
-
 getCharName();
+
+// GET list of helmets available to equip
+function getHelmList() {
+  $.ajax({
+    method: 'GET',
+    url: '/api/helms',
+    data: {},
+    datatype: 'json',
+  }).done(function(armorList){
+    console.log(armorList);
+    armorList.forEach(function(armor){
+      $("<option id='" + armor.armor_slot + "'>" + armor.armor_name + "</option>").appendTo($helmDropdown);
+    })
+  })
+}
+getHelmList();
+
 
 
 // POST new armor piece via form
 $("#addArmorBtn").on('click', function newArmorPiece() {
-  var slot = $armorSlot.val();
-  var piece = $armorPiece.val();
-  var descript = $armorDescript.val();
+  var slot = $addArmorSlot.val();
+  var piece = $addArmorPiece.val();
+  var descript = $addArmorDescript.val();
 
   $('#armorSlotInput').val('');
 

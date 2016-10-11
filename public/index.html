@@ -2,12 +2,13 @@
 <html>
   <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Almendra+SC" rel="stylesheet">
     <link rel="stylesheet" href="styles/main.css" type="text/css">
     <meta charset="utf-8">
     <title>Armory</title>
   </head>
   <body>
-    
+
     <div class="top">
       <header>
         <h1 class="title">Armory For:</h1>
@@ -16,10 +17,9 @@
     </div>
 
     <div></div>
-
-    <div class="col" id="add-armor-piece">
+    <div class="col-md-3" id="add-armor-piece">
       <h4 id="armor-input-title">Add a piece to your armory:</h4>
-      <form class="form-inline">
+      <form class="form" id="armor-form">
         <div class="form-group">
           <label class="sr-only" for="armorSlotInput">Armor Slot</label>
           <input type="slot" class="form-control" id="armorSlotInput" placeholder="Armor Slot">
@@ -35,7 +35,20 @@
         <button type="submit" class="btn btn-primary" id="addArmorBtn">Submit</button>
       </form>
     </div>
+    <div class="col-md-9">
+      <div class="panel panel-default" id="loadout">
+        <!-- Default panel contents -->
+        <div class="panel-heading" id="loadout-title">Character Loadout</div>
+        <div class="panel-body">
+          <p>You must be quite the fighter with this loadout...</p>
+        </div>
 
+        <!-- List group -->
+        <ul class="list-group">
+          <!-- list of items is gonna go here. -->
+        </ul>
+      </div>
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="js/jquery.js"></script>
     <script src="js/main.js"></script>

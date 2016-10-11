@@ -1,7 +1,44 @@
+body {
+  font-family: "Almendra SC";
+  background-image: url('http://i.imgur.com/HYxhJOq.jpg');
+  background-size: cover;
+  color: rgba(234, 238, 211, 1.0);
+}
+
+#armor-input-title {
+  font-size: 25px;
+}
+
+#addArmorBtn {
+  background-color: rgba(80, 70, 55, 1);
+}
+
+#loadout {
+  max-width: 75%;
+  color: rgba(80, 70, 55, 1);
+  background-color: rgba(234, 238, 211, 0.75);
+}
+#loadout-title {
+  font-size: 25px;
+  background-color: rgba(234, 238, 211, 1);
+}
+
+#armor-form {
+  max-width: inherit;
+  color: rgba(80, 70, 55, 1);
+}
+
+#armorDescript, #armorSlotInput, #armorPieceName {
+  background-color: rgba(234, 238, 211, 0.75);
+}
+
 .title {
   text-align: center;
+  font-size: 45px;
 }
 
 #Tacopies {
   text-align: center;
+  font-size: 65px;
+  color: rgba(234, 238, 211, 1.0);
 }

@@ -64,3 +64,33 @@ post '/api/add_armor_piece' do
   end
   halt(400)
 end
+
+get '/api/helms' do
+  armor_data = Armor.select('id, armor_slot, armor_name, description').all
+  helms = armor_data.where(armor_slot: 'helm').all
+  helms.to_json
+end
+
+get '/api/chest' do
+  armor_data = Armor.select('id, armor_slot, armor_name, description').all
+  helms = armor_data.where(armor_slot: 'chest').all
+  helms.to_json
+end
+
+get '/api/gloves' do
+  armor_data = Armor.select('id, armor_slot, armor_name, description').all
+  helms = armor_data.where(armor_slot: 'gloves').all
+  helms.to_json
+end
+
+get '/api/legs' do
+  armor_data = Armor.select('id, armor_slot, armor_name, description').all
+  helms = armor_data.where(armor_slot: 'legs').all
+  helms.to_json
+end
+
+get '/api/feet' do
+  armor_data = Armor.select('id, armor_slot, armor_name, description').all
+  helms = armor_data.where(armor_slot: 'feet').all
+  helms.to_json
+end

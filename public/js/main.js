@@ -56,7 +56,9 @@ function getHelmList() {
 }
 getHelmList();
 
-
+// setInterval(function(){
+// $.tasks.empty //empty out your tasks
+// },5000)
 
 // POST new armor piece via form
 $("#addArmorBtn").on('click', function newArmorPiece() {

@@ -18,6 +18,10 @@ label {
   margin-left: 20px;
 }
 
+#loadout {
+  list-style-image: url('images/knight_mascot.png');
+}
+
 .selectpicker {
   width: 150px;
   position: absolute;

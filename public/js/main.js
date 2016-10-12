@@ -1,19 +1,19 @@
 // setting variables for armor button submission
-var $addArmorSlot = $('#armorSlotInput')
-var $addArmorPiece = $('#armorPieceName')
-var $addArmorDescript = $('#armorDescript')
+var $addArmorSlot = $('#armorSlotInput');
+var $addArmorPiece = $('#armorPieceName');
+var $addArmorDescript = $('#armorDescript');
 
 // set variables for armor slot
-var $helmSelect = $('#helmSelect')
-var $chestSelect = $('#chestSelect')
-var $glovesSelect = $('#glovesSelect')
-var $legsSelect = $('#legsSelect')
-var $feetSelect = $('#feetSelect')
+var $helmSelect = $('#helmSelect');
+var $chestSelect = $('#chestSelect');
+var $glovesSelect = $('#glovesSelect');
+var $legsSelect = $('#legsSelect');
+var $feetSelect = $('#feetSelect');
 
 // set variable for weapons
-var $weaponSelect = $('#weaponSelect')
+var $weaponSelect = $('#weaponSelect');
 
-var $armorList = $('#ajsdpf')
+var $armorList = $('#ajsdpf');
 // setting variables for character
 var $characterName = $('#character-name');
 
@@ -29,7 +29,7 @@ function getCharName() {
   }).fail(function(xhr, text, status) {
     if (xhr.status == 404)
     console.log('help me, computer!', text, status, xhr.status);
-  })
+  });
 }
 getCharName();
 
@@ -43,8 +43,8 @@ function getHelmList() {
   }).done(function(armorList){
     armorList.forEach(function(armor){
       $("<option id='" + armor.armor_slot + "'>" + armor.armor_name + "</option>").appendTo($helmSelect);
-    })
-  })
+    });
+  });
 }
 getHelmList();
 
@@ -58,8 +58,8 @@ function getChestList() {
   }).done(function(armorList){
     armorList.forEach(function(armor){
       $("<option id='" + armor.armor_slot + "'>" + armor.armor_name + "</option>").appendTo($chestSelect);
-    })
-  })
+    });
+  });
 }
 getChestList();
 
@@ -73,8 +73,8 @@ function getGlovesList() {
   }).done(function(armorList){
     armorList.forEach(function(armor){
       $("<option id='" + armor.armor_slot + "'>" + armor.armor_name + "</option>").appendTo($glovesSelect);
-    })
-  })
+    });
+  });
 }
 getGlovesList();
 
@@ -88,8 +88,8 @@ function getLegsList() {
   }).done(function(armorList){
     armorList.forEach(function(armor){
       $("<option id='" + armor.armor_slot + "'>" + armor.armor_name + "</option>").appendTo($legsSelect);
-    })
-  })
+    });
+  });
 }
 getLegsList();
 
@@ -103,8 +103,8 @@ function getFeetList() {
   }).done(function(armorList){
     armorList.forEach(function(armor){
       $("<option id='" + armor.armor_slot + "'>" + armor.armor_name + "</option>").appendTo($feetSelect);
-    })
-  })
+    });
+  });
 }
 getFeetList();
 
@@ -120,8 +120,8 @@ function getWeaponList() {
     weaponList.forEach(function(weapon){
       // $("<option id='" + weapon.weapon_type + "'>" + weapon.weapon_name + "</option>").appendTo($weaponSelect);
       $("<option>").attr('id', weapon.weapon_name).text(weapon.weapon_name + ' ' + weapon.weapon_type).appendTo($weaponSelect);
-    })
-  })
+    });
+  });
 }
 getWeaponList();
 
@@ -146,12 +146,12 @@ $("#addArmorBtn").on('click', function newArmorPiece() {
       armor_name: piece,
       description: descript
     }
-  })
-})
+  });
+});
 
 // Constructor for character information
 function CharacterDetails(characterObject) {
-  console.log(characterObject);
+  // console.log(characterObject);
     this.info = {
         charName: characterObject.name,
         weapon: characterObject.weapon_id,

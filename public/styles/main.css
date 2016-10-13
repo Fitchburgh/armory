@@ -1,0 +1,80 @@
+body {
+  font-family: "Almendra SC";
+  background-image: url('http://i.imgur.com/HYxhJOq.jpg');
+  background-size: cover;
+  color: rgba(234, 238, 211, 1.0);
+}
+
+div.armorPicker{
+  position: relative;
+  margin-top: 50px;
+}
+
+div.armorPicker:last-child {
+  margin-bottom: 50px;
+}
+
+label {
+  margin-left: 20px;
+}
+
+#loadout {
+  list-style-image: url('images/knight_mascot.png');
+}
+
+.selectpicker {
+  width: 150px;
+  position: absolute;
+  left: 20%;
+  bottom: 20%;
+}
+
+#armor-input-title {
+  font-size: 25px;
+}
+
+#addArmorBtn {
+  background-color: rgba(80, 70, 55, 1);
+}
+
+#loadout {
+  max-width: 75%;
+  min-height: 50%;
+  color: rgba(80, 70, 55, 1);
+  background-color: rgba(234, 238, 211, 0.75);
+}
+#loadout-title {
+  font-size: 25px;
+  background-color: rgba(234, 238, 211, 1);
+}
+
+#armor-form {
+  max-width: inherit;
+  color: rgba(80, 70, 55, 1);
+}
+
+#armorDescript, #armorSlotInput, #armorPieceName {
+  background-color: rgba(234, 238, 211, 0.75);
+}
+
+.panel-body {
+  font-size: 25px;
+}
+
+.title {
+  text-align: center;
+  font-size: 45px;
+}
+
+.character,
+#Tacopies {
+  text-align: center;
+  font-size: 65px;
+  color: rgba(234, 238, 211, 1.0);
+}
+
+/*label {
+  width: 60%;
+
+
+}*/

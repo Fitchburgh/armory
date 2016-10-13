@@ -1,0 +1,23 @@
+-------
+to add:
+README
+
+*1 dropdowns for all slots not just helms -
+  *1 validate each slot name
+
+*1b figure out case sensitivity
+
+*2 update character loadout in sql
+
+*2b why isn't the loadout updating?
+
+*:( custom art
+
+*5 use a countdown to give a timer for setting your equipment.
+Then battle each other based on weapon and armor values.
+
+-------
+to fix:
+*3 validations on user input *****
+
+*4 loadtime?

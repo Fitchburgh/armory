@@ -1,12 +1,98 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Almendra+SC" rel="stylesheet">
     <link rel="stylesheet" href="styles/main.css" type="text/css">
     <meta charset="utf-8">
     <title>Armory</title>
   </head>
   <body>
-    <h1>Armory</h1>
+    <div class="top">
+      <header>
+        <h1 class="title">Armory For:</h1>
+      </header>
+      <!-- Name of character will be here via magic element -->
+    </div>
+
+    <div></div>
+    <div class="col-md-3" id="add-armor-piece">
+      <h4 id="armor-input-title">Add a piece to your armory:</h4>
+      <form class="form" id="armor-form">
+        <div class="form-group">
+          <label class="sr-only" for="armorSlotInput">Armor Slot</label>
+          <input type="slot" class="form-control" id="armorSlotInput" placeholder="Armor Slot">
+        </div>
+        <div class="form-group">
+          <label class="sr-only" for="armorPieceName">Piece Name</label>
+          <input type="name" class="form-control" id="armorPieceName" placeholder="Piece Name">
+        </div>
+        <div class="form-group">
+          <label for="armorDescript"></label>
+          <textarea class="form-control" id="armorDescript" rows="3" placeholder="Description (optional)"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" id="addArmorBtn">Submit</button>
+      </form>
+    </div>
+      <div class="col-md-9">
+        <div class="panel panel-default" id="loadout">
+          <!-- Default panel contents -->
+          <div class="panel-heading" id="loadout-title">Character Loadout</div>
+          <div class="panel-body">
+            <p>You must be quite the fighter with this loadout...</p>
+            <img src="../styles/images/knight_mascot.png"></img>
+          </div>
+          <!-- List group -->
+          <div class="armorPicker">
+            <label class="test-two" for="helmSelect" id="helmPic">Helms!
+              <select class="selectpicker" id="helmSelect">
+                <option>Select</option>
+                <!-- list of items is gonna go here. -->
+              </select>
+            </label>
+          </div>
+          <div class="armorPicker">
+            <label for="chestSelect" id="chestPic">Chests!
+              <select class="selectpicker" id="chestSelect">
+                <option>Select</option>
+                <!-- list of items is gonna go here. -->
+              </select>
+            </label>
+          </div>
+          <div class="armorPicker">
+            <label for="glovesSelect" id="glovePic">Gloves!
+              <select class="selectpicker" id="glovesSelect">
+                <option>Select</option>
+                <!-- list of items is gonna go here. -->
+              </select>
+            </label>
+          </div>
+          <div class="armorPicker">
+            <label for="legsSelect" id="legPic">Legs!
+              <select class="selectpicker" id="legsSelect">
+                <option>Select</option>
+                <!-- list of items is gonna go here. -->
+              </select>
+            </label>
+          </div>
+          <div class="armorPicker">
+            <label for="feetSelect" id="feetPic">Feet!
+              <select class="selectpicker" id="feetSelect">
+                <option>Select</option>
+                <!-- list of items is gonna go here. -->
+              </select>
+            </label>
+          </div>
+          <div class="armorPicker">
+            <label for="weaponSelect" id="weaponPic">Weapons!
+              <select class="selectpicker" id="weaponSelect">
+                <option>Select</option>
+                <!-- list of items is gonna go here. -->
+              </select>
+            </label>
+          </div>
+        </div>
+      </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="js/jquery.js"></script>
     <script src="js/main.js"></script>

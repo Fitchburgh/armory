@@ -3,7 +3,7 @@ require 'active_record'
 class CreateArmors < ActiveRecord::Migration[5.0]
   def up
     create_table :armors do |t|
-      t.string :type
+      t.string :item
     end
   end
 
